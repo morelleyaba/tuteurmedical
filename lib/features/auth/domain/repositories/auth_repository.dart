@@ -1,6 +1,7 @@
 import '../../domain/entities/user.dart';
 import '../params/auth_params.dart';
 
+// Defini ce qu'on peut faire avec l'authentification
 /// Authentication repository contract
 abstract class AuthRepository {
   // la fonction "login" creé ici sera utilisé dans useCase

@@ -40,3 +40,6 @@ class UserModel extends User {
     );
   }
 }
+
+// quand un element extends sur un autre, c'est qu'il utilise egalement les données de l'autre aussi,
+// du coup pas besoin de repéter les declaration des variables commun, on peux ajouter ceux qu'on ne retrouve pas dans la classe extendu (ajouter les comme ":super()")

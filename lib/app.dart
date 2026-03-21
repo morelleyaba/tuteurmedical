@@ -5,7 +5,6 @@ import 'core/di/injection_container.dart';
 import 'core/routes/app_routes.dart';
 import 'core/routes/route_generator.dart';
 import 'core/theme/app_theme.dart';
-import 'features/auth/data/repositories_impl/auth_repository_impl.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

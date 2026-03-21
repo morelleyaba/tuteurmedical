@@ -28,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
 void initState(){
    super.initState();
 
-  _emailController.text = "chloe@gmail.com";
+  _emailController.text = "codebymorelle@gmail.com";
   _passwordController.text = "123456";
       print("-----tokenPrefString-----");
       print("$token");

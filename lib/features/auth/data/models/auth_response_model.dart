@@ -13,3 +13,5 @@ class AuthResponseModel {
     );
   }
 }
+// on peut avoir un model sans entity , ex : ce model ci
+// Reponse Api, DTO ( Data Transfer Object), Donnée de pagination, Token d'authentification
