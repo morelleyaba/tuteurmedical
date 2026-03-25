@@ -41,5 +41,26 @@ class UserModel extends User {
   }
 }
 
+
 // quand un element extends sur un autre, c'est qu'il utilise egalement les données de l'autre aussi,
-// du coup pas besoin de repéter les declaration des variables commun, on peux ajouter ceux qu'on ne retrouve pas dans la classe extendu (ajouter les comme ":super()")
+// du coup pas besoin de repéter les declaration des variables commun, on peux ajouter ceux qu'on ne retrouve pas dans la classe extendu (ensuite ajouter les propietés commununes dans la deuxieme partie comme ":super(id:id, name:name)"), ex :
+
+// class Person {
+//   final int id;
+//   final String name;
+
+//   Person({
+//     required this.id,
+//     required this.name,
+//   });
+// }
+
+// class Student extends Person {
+//   final String matricule;
+
+//   Student({
+//     required int id,
+//     required String name,
+//     required this.matricule,
+//   }) : super(id: id, name: name); // les variables qu'on a pas mis dans la declaration sont ajouté ici
+// }

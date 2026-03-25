@@ -11,12 +11,13 @@ import '../models/user_model.dart';
 // apres les implementations de ce fichier, on part maitenant dans cubit 
 
 class AuthRepositoryImpl implements AuthRepository {
+  // les données de l'api qu'on va utiliser
   final AuthRemoteDatasource remote;
 
 AuthRepositoryImpl({required this.remote});
 
   @override
-  Future<User> login(AuthParams authParams) async { // fonction "login utilisé dans useCase"
+  Future<User> login(AuthParams authParams) async { // fonction "login utilisé dans useCase" et "auth_repository"
     try {
 
 // la fonction "login" utilisé ici , vient de "AuthRemoteDatasourceImpl" et "AuthRemoteDatasource"
@@ -69,3 +70,12 @@ AuthRepositoryImpl({required this.remote});
     throw UnimplementedError();
   }
 }
+
+// Différence simple
+
+// 👉 extends = héritage (tu récupères le code)
+// 👉 implements = contrat (tu dois tout réécrire) :
+
+// respecter les noms exacts
+// respecter les paramètres
+// respecter les types de retour

@@ -54,7 +54,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 height: 300,
                 radius: 8,
               ),
-              Text("Tuteur Medical",
+              Text("Assistant Medical",
               style: TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,

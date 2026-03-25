@@ -23,17 +23,16 @@ class _LoginScreenState extends State<LoginScreen> {
 
   bool _isLoading = false;
   final token = HiveUtils.getToken();
-  
-@override
-void initState(){
-   super.initState();
 
-  _emailController.text = "codebymorelle@gmail.com";
-  _passwordController.text = "123456";
-      print("-----tokenPrefString-----");
-      print("$token");
+  @override
+  void initState() {
+    super.initState();
 
-}
+    _emailController.text = "codebymorelle@gmail.com";
+    _passwordController.text = "123456";
+    print("-----tokenPrefString-----");
+    print("$token");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,9 +51,9 @@ void initState(){
           // Navigation vers l'écran principal après connexion réussie
           Navigator.pushReplacementNamed(context, AppRoutes.home);
         }
-        if(state.isLoading == true){
+        if (state.isLoading == true) {
           setState(() {
-          _isLoading = true;
+            _isLoading = true;
           });
         }
       },
@@ -66,82 +65,82 @@ void initState(){
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-              // Text(
-              //   'Tuteur Medical',
-              //   style: TextTheme.of(context).titleLarge?.
-              //   copyWith(color: AppColors.primayColor, fontFamily: "Quicksand"),
-              // ),
-               SizedBox(height: AppConstants.defaultvalue * 2),
-                 AppImage(
-                AppAssets.tutor,
-                width: 150,
-                height: 150,
-                radius: 8,
-              ),
-               SizedBox(height: AppConstants.defaultvalue * 2),
-              Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Connecte toi a ton compte",
-                    style: TextTheme.of(context).titleMedium?.copyWith(
-                        fontWeight: FontWeight.w600, color: Colors.black54),
-                  )),
-               SizedBox(height: AppConstants.defaultvalue),
-              TextField(
-                controller: _emailController,
-                decoration: const InputDecoration(
-                  labelText: 'Email',
+                // Text(
+                //   'Tuteur Medical',
+                //   style: TextTheme.of(context).titleLarge?.
+                //   copyWith(color: AppColors.primayColor, fontFamily: "Quicksand"),
+                // ),
+                SizedBox(height: AppConstants.defaultvalue * 2),
+                AppImage(
+                  AppAssets.tutor,
+                  width: 150,
+                  height: 150,
+                  radius: 8,
                 ),
-              ),
-               SizedBox(height: AppConstants.defaultvalue),
-              TextField(
-                controller: _passwordController,
-                obscureText: true,
-                decoration: const InputDecoration(
-                  labelText: 'Mot de passe',
-                ),
-              ),
-              AppButton(
-                        size: size,
-                        press: _isLoading ? null : _performLogin, 
-                        isLoading: _isLoading,
-                      ),
-              SizedBox(height: AppConstants.defaultvalue),
-              Text(
-                "Ou se connecter avec",
-                style: TextTheme.of(context)
-                    .labelMedium
-                    ?.copyWith(color: Colors.black54),
-              ),
-               SizedBox(height: AppConstants.defaultvalue),
-               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  AppImage(
-                    AppAssets.google,
-                    width: 20,
-                    height: 20,
-                    radius: 8,
+                SizedBox(height: AppConstants.defaultvalue * 2),
+                Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Connecte toi a ton compte",
+                      style: TextTheme.of(context).titleMedium?.copyWith(
+                          fontWeight: FontWeight.w600, color: Colors.black54),
+                    )),
+                SizedBox(height: AppConstants.defaultvalue),
+                TextField(
+                  controller: _emailController,
+                  decoration: const InputDecoration(
+                    labelText: 'Email',
                   ),
-                  Padding(
-                    padding:  EdgeInsets.symmetric(horizontal: AppConstants.defaultvalue * 3),
-                    child: AppImage(
-                      AppAssets.facebook,
+                ),
+                SizedBox(height: AppConstants.defaultvalue),
+                TextField(
+                  controller: _passwordController,
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                    labelText: 'Mot de passe',
+                  ),
+                ),
+                AppButton(
+                  size: size,
+                  press: _isLoading ? null : _performLogin,
+                  isLoading: _isLoading,
+                ),
+                SizedBox(height: AppConstants.defaultvalue),
+                Text(
+                  "Ou se connecter avec",
+                  style: TextTheme.of(context)
+                      .labelMedium
+                      ?.copyWith(color: Colors.black54),
+                ),
+                SizedBox(height: AppConstants.defaultvalue),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    AppImage(
+                      AppAssets.google,
                       width: 20,
                       height: 20,
                       radius: 8,
                     ),
-                  ),
-                  AppImage(
-                    AppAssets.twitter,
-                    width: 20,
-                    height: 20,
-                    radius: 8,
-                  ),
-          
-                ],
-               ),
-              const SizedBox(height: 24),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: AppConstants.defaultvalue * 3),
+                      child: AppImage(
+                        AppAssets.facebook,
+                        width: 20,
+                        height: 20,
+                        radius: 8,
+                      ),
+                    ),
+                    AppImage(
+                      AppAssets.twitter,
+                      width: 20,
+                      height: 20,
+                      radius: 8,
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 24),
               ],
             ),
           ),
@@ -155,18 +154,17 @@ void initState(){
     final password = _passwordController.text;
 
     // la fonction "conexion" utilisé ici vient de authCubit
-    context.read<AuthCubit>().conexion(
-    AuthParams(email: email, password: password)
-    );
+    context
+        .read<AuthCubit>()
+        .conexion(AuthParams(email: email, password: password));
     print("resultat  $email $password");
-
 
     // TODO: Implement login logic based on state management
   }
 
   // Future<void> login() async {
   //   try {
-  //     print("STATUS: Hello"); 
+  //     print("STATUS: Hello");
   //     final dio = Dio();
 
   //     final response = await dio.post(
@@ -192,4 +190,3 @@ void initState(){
     super.dispose();
   }
 }
-

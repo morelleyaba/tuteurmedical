@@ -6,4 +6,10 @@ class AppAssets {
 
     static String tutor = "assets/images/tutor.png";
 
+    static String medsf = "assets/images/med-sf.png";
+    static String churigie = "assets/images/med-churigie.png";
+    static String gene = "assets/images/med-gene.png";
+    static String cardio = "assets/images/med-cardio.png";
+
+
 }

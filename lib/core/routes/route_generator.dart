@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tuteur_medical/features/service/presentation/screens/home_screen.dart';
 import '../../features/auth/presentation/screens/login_screen.dart';
 import '../../features/auth/presentation/screens/splash_screen.dart';
+import '../../features/service/presentation/screens/home_screen.dart';
 import 'app_routes.dart';
 
 class RouteGenerator {

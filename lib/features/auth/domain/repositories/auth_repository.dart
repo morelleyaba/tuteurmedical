@@ -4,7 +4,7 @@ import '../params/auth_params.dart';
 // Defini ce qu'on peut faire avec l'authentification
 /// Authentication repository contract
 abstract class AuthRepository {
-  // la fonction "login" creé ici sera utilisé dans useCase
+  // la fonction "login" creé ici sera utilisé dans useCase et "auth_repository_impl"
   Future<User> login(AuthParams authParams); //retourne un User 
   Future<User> register(String email, String password, String name);
   Future<void> logout();
